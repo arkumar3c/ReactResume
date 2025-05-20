@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import store from './store';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Component/Home';
 import Layout from './Layout';
 import About from './Component/About/About';
@@ -13,7 +14,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <BrowserRouter>
+        <Router>
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
@@ -22,7 +23,7 @@ function App() {
               <Route path="portfolio" element={<PortFolio />} />
             </Route>
           </Routes>
-        </BrowserRouter>
+        </Router>
 
         {/* <SearchApi /> */}
         {/* <LifeCycle /> */}
